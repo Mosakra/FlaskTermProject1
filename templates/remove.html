@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h1>Remove Game</h1>
+    {% if games %}
+        <ul>
+            {% for game in games %}
+                <li>
+                    {{ game.title }}
+                    <form method="POST" action="{{ url_for('remove_game', index=loop.index0) }}">
+                        <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No games to remove.</p>
+    {% endif %}
+{% endblock %}

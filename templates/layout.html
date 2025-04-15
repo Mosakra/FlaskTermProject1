@@ -2,11 +2,6 @@
     <head>
         <title>Eric Stock Website</title>
         <link rel="stylesheet" type="text/css" href="/static/styles.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous"><!DOCTYPE html>
-<html>
-    <head>
-        <title>Eric Stock Website</title>
-        <link rel="stylesheet" type="text/css" href="/static/styles.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
 </head>
     <body>
@@ -19,19 +14,14 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link {%if request.path == url_for('index') %} active {% endif %}" href="/"
-              {%if request.path == url_for('index') %} aria-current="page"{% endif %}
+              <a class="nav-link {%if request.path == url_for("index") %} active {% endif %}" href="/"
+              {%if request.path == url_for("index") %} aria-current="page"{% endif %}
               >Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {%if request.path == url_for('add') %} active {% endif %}" href="/add"
-              {%if request.path == url_for('add') %} aria-current="page"{% endif %}
+              <a class="nav-link {%if request.path == url_for("add") %} active {% endif %}" href="/add"
+              {%if request.path == url_for("add") %} aria-current="page"{% endif %}
               >Add Game</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {%if request.path == '/remove' %} active {% endif %}" href="/remove"
-                {%if request.path == '/remove' %} aria-current="page"{% endif %}
-                >Remove Game</a>
             </li>
           </ul>
         </div>

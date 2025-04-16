@@ -25,9 +25,14 @@
               >Add Game</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {%if request.path == '/remove' %} active {% endif %}" href="/remove"
-                {%if request.path == '/remove' %} aria-current="page"{% endif %}
+                <a class="nav-link {%if request.path == url_for('remove') %} active {% endif %}" href="/remove"
+                {%if request.path == url_for('remove') %} aria-current="page"{% endif %}
                 >Remove Game</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == url_for('game_inventory') %} active {% endif %}" href="/game_inventory"
+              {% if request.path == url_for('game_inventory') %} aria-current="page"{% endif %}
+            >Game Inventory</a>
             </li>
           </ul>
         </div>

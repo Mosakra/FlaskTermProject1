@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}Game Inventory - Liam Edwards Website {% endblock %}
+
+{% block body %}
+        <div class = "container mt-5">
+            <h2>Game Inventory</h2>
+            <div class = "row">
+                {% for game in games %}
+                    <div class="col-md-4 col-sm-6 col-12 mb-3">
+                        <div class="card p-3">
+                            <h5>{{ game.title  }}</h5>
+                            <p>{{ game.year  }}</p>
+                            <p>{{ game.plat  }}</p>
+                            <image height = 128 src="{{ file_location }}/{{ game.image }}" class="card_img-top"/>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% if not games %}
+                    <p>No games have been added to inventory.</p>
+                {% endif %}
+            </div>
+        </div>
+{% endblock %}

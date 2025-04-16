@@ -73,6 +73,10 @@ def remove_game(index):
         flash('Invalid game selection', 'error')
         return redirect(url_for('remove'))
 
+@app.route("/game_inventory")
+def game_inventory():
+    games = get_games_from_session()
+    return render_template("game_inventory.html", games=games, file_location=file_save_location)
 
 if __name__ == "__main__":
    app.run(debug=True, host="0.0.0.0")

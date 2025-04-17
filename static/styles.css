@@ -9,7 +9,7 @@
     border: 1px solid black;
 }
 body {
-  background-image: url('/static/images/yellow.jpg');
+  background-image: url('/static/Styles/yellow.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

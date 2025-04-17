@@ -1,4 +1,3 @@
-
 .error {
     background-color: beige;
     color: red;
@@ -8,4 +7,59 @@
     background-color: aqua;
     color: black;
     border: 1px solid black;
+}
+body {
+  background-image: url('/static/images/yellow.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: white;
+}
+
+h2 {
+    color: purple;
+}
+
+h3 {
+    color: greenyellow;
+}
+
+p {
+    color: red;
+}
+
+a {
+    color: red;
+}
+
+h4 {
+    color: darkgoldenrod;
+}
+
+li {
+    color: red;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+p.lead {
+    color: black;
+}
+
+a.btn-link {
+    color: black;
+}
+
+.card h4 {
+    color: purple;
+}
+
+.card p.display-4 {
+    color: orange;
+}
+
+.list-group-item {
+    color: cyan;
 }

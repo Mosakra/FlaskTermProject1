@@ -1,18 +1,47 @@
 {% extends "layout.html" %}
 
+{% block title %}Liam Edwards Website{% endblock %}
+
 {% block body %}
-        <div class = "container">
-            <div class = "row">
-        {% for game in games %}
-            <div class="col-md-4 col-sm-6 col-12 mb-3">
-                <div class="card p-3">
-                    <h5>{{ game.title  }}</h5>
-                    <p>{{ game.year  }}</p>
-                    <p>{{ game.plat  }}</p>
-                    <image height = 128 src="{{ file_location }}/{{ game.image }}" class="card_img-top"/>
-                </div>
-            </div>
-        {% endfor %}
+<div class="container mt-5">
+    <h2>Your Game Collection Summary</h2>
+    <p class="lead">Here's a quick overview of your video game library. <a href="{{ url_for('game_inventory') }}" class="btn btn-link">View Full Inventory</a></p>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card p-3 text-center">
+                <h4>Total Games</h4>
+                <p class="display-4">{{ games|length }}</p>
             </div>
         </div>
+        <div class="col-md-4">
+            <div class="card p-3">
+                <h4>Games by Platform</h4>
+                <ul>
+                    {% set platform_counts = {} %}
+                    {% for game in games %}
+                        {% set platform_counts = platform_counts.update({game.plat: platform_counts.get(game.plat, 0) + 1}) or platform_counts %}
+                    {% endfor %}
+                    {% for platform, count in platform_counts.items() %}
+                        <li>{{ platform }}: {{ count }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        </div>
+
+    <div class="mt-4">
+        <h3>Recently Added Games</h3>
+        {% if games %}
+        <ul class="list-group">
+            {% for game in games[-5:] | reverse %}
+            <li class="list-group-item">{{ game.title }} ({{ game.year }})</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>No games added yet.</p>
+        {% endif %}
+
+    </div>
+</div>
 {% endblock %}

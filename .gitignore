@@ -1,5 +1,6 @@
 __pycache__
 .idea/
 .venv
-static/images/
+static/images/*
+!static/images/dummy.txt
 flask_session/
